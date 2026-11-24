@@ -22,7 +22,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .cta{background:linear-gradient(135deg,var(--a),var(--b));color:#fff!important;padding:8px 16px;border-radius:99px;font-weight:600;font-size:.88rem;white-space:nowrap}.cta:hover{filter:brightness(1.1);text-decoration:none}
 /* hero */
 header.hero{padding:26px 0 8px}
-.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:32px;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
 .badge{display:inline-flex;gap:8px;align-items:center;font-size:.82rem;color:var(--ok);border:1px solid #3ecf8e44;background:#3ecf8e12;padding:5px 13px;border-radius:99px;margin-bottom:12px}
 .badge i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 #3ecf8e88;animation:pulse 2s infinite}
 @keyframes pulse{70%{box-shadow:0 0 0 9px #3ecf8e00}100%{box-shadow:0 0 0 0 #3ecf8e00}}
@@ -33,10 +33,12 @@ h1 em{font-style:normal;background:linear-gradient(90deg,var(--a),var(--b));-web
 .btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:14px;font-weight:600;font-size:.95rem;border:1px solid var(--line);background:var(--card);color:var(--text);transition:.2s;cursor:pointer}
 .btn:hover{transform:translateY(-2px);border-color:var(--a);text-decoration:none}
 .btn.primary{background:linear-gradient(135deg,var(--a),var(--b));border:0;color:#fff}.btn.primary:hover{filter:brightness(1.1)}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.stat{background:linear-gradient(160deg,var(--card),var(--card2));border:1px solid var(--line);border-radius:var(--r);padding:12px 16px}
-.stat b{display:block;font-size:1.7rem;line-height:1.1;font-weight:800;background:linear-gradient(90deg,#fff,var(--a));-webkit-background-clip:text;background-clip:text;color:transparent}
-.stat span{font-size:.85rem;color:var(--muted)}
+.herovid{display:flex;flex-direction:column;gap:12px}
+.g2v{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.stat{background:linear-gradient(160deg,var(--card),var(--card2));border:1px solid var(--line);border-radius:var(--r);padding:8px 10px}
+.stat b{display:block;font-size:1.3rem;line-height:1.1;font-weight:800;background:linear-gradient(90deg,#fff,var(--a));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{font-size:.7rem;line-height:1.3;color:var(--muted)}
 /* sections */
 section{padding:64px 0}
 .eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--a);font-weight:700;margin-bottom:10px}
@@ -93,7 +95,7 @@ form.send{display:flex;gap:8px;padding:14px 18px;border-top:1px solid var(--line
 footer{padding:34px 0 50px;color:var(--muted);font-size:.82rem;text-align:center}
 /* reveal */
 .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.rv.in{opacity:1;transform:none}
-@media(max-width:860px){.hero-grid,.about{grid-template-columns:1fr}header.hero{padding-top:20px}.links{display:none}#log{height:360px}.msg{max-width:94%}}
+@media(max-width:860px){.g2v{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.hero-grid,.about{grid-template-columns:1fr}header.hero{padding-top:20px}.links{display:none}#log{height:360px}.msg{max-width:94%}}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -115,18 +117,20 @@ footer{padding:34px 0 50px;color:var(--muted);font-size:.82rem;text-align:center
       <a class="btn" href="https://www.linkedin.com/in/adrian-barrena-castillon" target="_blank" rel="noopener">in LinkedIn</a>
     </div>
   </div>
-  <div class="stats rv">
+  <div class="herovid rv">
+    <div class="card vcard"><video controls preload="metadata" playsinline src="pitch.mp4"></video><div class="info"><h3>▶ Mi elevator pitch</h3><p>Quién soy y qué aporto, en 15 segundos.</p></div></div>
+    <div class="stats">
     <div class="stat"><b data-count="4">0</b><span>certificaciones<br>(Microsoft y HP)</span></div>
     <div class="stat"><b>C1</b><span>nivel de inglés</span></div>
     <div class="stat"><b data-count="726">0</b><span>tests automáticos<br>en Heredia</span></div>
     <div class="stat"><b data-count="100" data-prefix="~">0</b><span>endpoints de API<br>construidos</span></div>
+    </div>
   </div>
 </div></header>
 
 <section id="videos" style="padding:14px 0 40px"><div class="wrap">
-  <h2 class="rv" style="font-size:1.35rem;margin-bottom:14px">▶ Conóceme en 3 vídeos</h2>
-  <div class="grid g3">
-    <div class="card vcard rv"><video controls preload="metadata" src="pitch.mp4"></video><div class="info"><h3>1 · Elevator pitch</h3><p>Quién soy y qué aporto.</p></div></div>
+  <h2 class="rv" style="font-size:1.35rem;margin-bottom:14px">▶ Y dos vídeos más</h2>
+  <div class="grid g2v">
     <div class="card vcard rv"><video controls preload="metadata" src="proyecto.mp4"></video><div class="info"><h3>2 · Proyecto destacado</h3><p>Heredia: reto, tecnologías y estado.</p></div></div>
     <div class="card vcard rv"><video controls preload="metadata" src="habilidades.mp4"></video><div class="info"><h3>3 · Habilidades y motivación en IA</h3><p>Equipo, idiomas, certificaciones y por qué la IA.</p></div></div>
   </div>
