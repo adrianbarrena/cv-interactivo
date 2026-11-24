@@ -331,7 +331,7 @@ function errorMessage(status, body){
   if (status === 401 || status === 403) return "La API Key no tiene permisos o ha sido revocada. Genera una nueva en Google AI Studio.";
   if (status === 429) return "Se ha agotado la cuota o hay demasiadas peticiones. Espera un minuto e inténtalo de nuevo.";
   if (status === 404) return "Ningún modelo de Gemini está disponible para esta clave. " + m;
-  if (status >= 500) return "El servicio de Gemini no está disponible ahora mismo. Inténtalo de nuevo en unos minutos.";
+  if (status >= 500) return "Gemini no está disponible ahora mismo (error " + status + (m ? ": " + m : "") + "). Inténtalo de nuevo en unos minutos.";
   return "Error " + status + (m ? ": " + m : "");
 }
 async function callGemini(model, key){
@@ -347,9 +347,10 @@ async function ask(text){
   const typing = addTyping(); $("go").disabled = true;
   try {
     let res, data;
-    for (const m of MODELS) {               // si el modelo no existe (404), prueba el siguiente
+    for (const m of MODELS) {               // si un modelo no existe o está saturado, prueba el siguiente
       res = await callGemini(m, key); data = await res.json().catch(() => null);
-      if (res.status !== 404) break;
+      if (res.ok || ![404, 429, 500, 502, 503, 504].includes(res.status)) break;
+      if (res.status >= 500 || res.status === 429) await new Promise(r => setTimeout(r, 700));
     }
     typing.remove();
     if (!res.ok) { history.pop(); return addMsg(errorMessage(res.status, data), "err"); }
