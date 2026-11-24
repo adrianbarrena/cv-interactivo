@@ -21,21 +21,21 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .links a{color:var(--muted);font-size:.88rem;padding:7px 11px;border-radius:99px;white-space:nowrap}.links a:hover{color:var(--text);background:#ffffff0d;text-decoration:none}
 .cta{background:linear-gradient(135deg,var(--a),var(--b));color:#fff!important;padding:8px 16px;border-radius:99px;font-weight:600;font-size:.88rem;white-space:nowrap}.cta:hover{filter:brightness(1.1);text-decoration:none}
 /* hero */
-header.hero{padding:84px 0 56px}
-.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:center}
-.badge{display:inline-flex;gap:8px;align-items:center;font-size:.82rem;color:var(--ok);border:1px solid #3ecf8e44;background:#3ecf8e12;padding:5px 13px;border-radius:99px;margin-bottom:20px}
+header.hero{padding:26px 0 8px}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:32px;align-items:center}
+.badge{display:inline-flex;gap:8px;align-items:center;font-size:.82rem;color:var(--ok);border:1px solid #3ecf8e44;background:#3ecf8e12;padding:5px 13px;border-radius:99px;margin-bottom:12px}
 .badge i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 #3ecf8e88;animation:pulse 2s infinite}
 @keyframes pulse{70%{box-shadow:0 0 0 9px #3ecf8e00}100%{box-shadow:0 0 0 0 #3ecf8e00}}
-h1{font-size:clamp(2.3rem,6.2vw,4.1rem);line-height:1.05;letter-spacing:-.03em;font-weight:800}
+h1{font-size:clamp(1.9rem,4.6vw,3rem);line-height:1.05;letter-spacing:-.03em;font-weight:800}
 h1 em{font-style:normal;background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{font-size:clamp(1.02rem,2.2vw,1.22rem);color:var(--muted);margin:20px 0 28px;max-width:640px}
+.lead{font-size:clamp(1.02rem,2.2vw,1.22rem);color:var(--muted);margin:12px 0 18px;max-width:640px}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:14px;font-weight:600;font-size:.95rem;border:1px solid var(--line);background:var(--card);color:var(--text);transition:.2s;cursor:pointer}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:14px;font-weight:600;font-size:.95rem;border:1px solid var(--line);background:var(--card);color:var(--text);transition:.2s;cursor:pointer}
 .btn:hover{transform:translateY(-2px);border-color:var(--a);text-decoration:none}
 .btn.primary{background:linear-gradient(135deg,var(--a),var(--b));border:0;color:#fff}.btn.primary:hover{filter:brightness(1.1)}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.stat{background:linear-gradient(160deg,var(--card),var(--card2));border:1px solid var(--line);border-radius:var(--r);padding:20px 18px}
-.stat b{display:block;font-size:2.2rem;line-height:1.1;font-weight:800;background:linear-gradient(90deg,#fff,var(--a));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat{background:linear-gradient(160deg,var(--card),var(--card2));border:1px solid var(--line);border-radius:var(--r);padding:12px 16px}
+.stat b{display:block;font-size:1.7rem;line-height:1.1;font-weight:800;background:linear-gradient(90deg,#fff,var(--a));-webkit-background-clip:text;background-clip:text;color:transparent}
 .stat span{font-size:.85rem;color:var(--muted)}
 /* sections */
 section{padding:64px 0}
@@ -93,14 +93,14 @@ form.send{display:flex;gap:8px;padding:14px 18px;border-top:1px solid var(--line
 footer{padding:34px 0 50px;color:var(--muted);font-size:.82rem;text-align:center}
 /* reveal */
 .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.rv.in{opacity:1;transform:none}
-@media(max-width:860px){.hero-grid,.about{grid-template-columns:1fr}header.hero{padding-top:52px}.links{display:none}#log{height:360px}.msg{max-width:94%}}
+@media(max-width:860px){.hero-grid,.about{grid-template-columns:1fr}header.hero{padding-top:20px}.links{display:none}#log{height:360px}.msg{max-width:94%}}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 <nav><div class="wrap">
   <a class="logo" href="#top">adrián<span>.</span>barrena</a>
-  <div class="links"><a href="#sobre-mi">Sobre mí</a><a href="#videos">Vídeos</a><a href="#proyectos">Proyectos</a><a href="#habilidades">Habilidades</a><a href="#formacion">Formación</a><a href="#experiencia">Experiencia</a></div>
+  <div class="links"><a href="#videos">Vídeos</a><a href="#sobre-mi">Sobre mí</a><a href="#proyectos">Proyectos</a><a href="#habilidades">Habilidades</a><a href="#formacion">Formación</a><a href="#experiencia">Experiencia</a></div>
   <a class="cta" href="#asistente">💬 Pregúntame</a>
 </div></nav>
 
@@ -108,10 +108,9 @@ footer{padding:34px 0 50px;color:var(--muted);font-size:.82rem;text-align:center
   <div>
     <div class="badge rv"><i></i> Buscando mi primera oportunidad en datos</div>
     <h1 class="rv">Hola, soy <em>Adrián Barrena</em>.<br>Datos, negocio e IA.</h1>
-    <p class="lead rv">Estudiante de <b>ADE + Data Science</b> en ESIC (Madrid) y fundador de <b>Heredia</b>, un SaaS legaltech. Analizo datos con Excel, Python y SQL, construyo productos web completos y uso la IA a diario para hacerlo mejor y más rápido.</p>
+    <p class="lead rv">Estudiante de <b>ADE + Data Science</b> en ESIC (Madrid) y fundador de <b>Heredia</b>, un SaaS legaltech. Analizo datos con Excel, Python y SQL y uso la IA a diario.</p>
     <div class="btns rv">
       <a class="btn primary" href="#asistente">💬 Hablar con mi asistente</a>
-      <a class="btn" href="#videos">▶ Ver mis vídeos</a>
       <a class="btn" href="mailto:barrenacastillonadrian@gmail.com">✉ Contactar</a>
       <a class="btn" href="https://www.linkedin.com/in/adrian-barrena-castillon" target="_blank" rel="noopener">in LinkedIn</a>
     </div>
@@ -123,6 +122,15 @@ footer{padding:34px 0 50px;color:var(--muted);font-size:.82rem;text-align:center
     <div class="stat"><b data-count="100" data-prefix="~">0</b><span>endpoints de API<br>construidos</span></div>
   </div>
 </div></header>
+
+<section id="videos" style="padding:14px 0 40px"><div class="wrap">
+  <h2 class="rv" style="font-size:1.35rem;margin-bottom:14px">▶ Conóceme en 3 vídeos</h2>
+  <div class="grid g3">
+    <div class="card vcard rv"><video controls preload="metadata" src="pitch.mp4"></video><div class="info"><h3>1 · Elevator pitch</h3><p>Quién soy y qué aporto.</p></div></div>
+    <div class="card vcard rv"><video controls preload="metadata" src="proyecto.mp4"></video><div class="info"><h3>2 · Proyecto destacado</h3><p>Heredia: reto, tecnologías y estado.</p></div></div>
+    <div class="card vcard rv"><video controls preload="metadata" src="habilidades.mp4"></video><div class="info"><h3>3 · Habilidades y motivación en IA</h3><p>Equipo, idiomas, certificaciones y por qué la IA.</p></div></div>
+  </div>
+</div></section>
 
 <section id="sobre-mi"><div class="wrap">
   <div class="eyebrow rv">Sobre mí</div><h2 class="rv">Negocio con cabeza de datos</h2>
@@ -139,16 +147,6 @@ footer{padding:34px 0 50px;color:var(--muted);font-size:.82rem;text-align:center
       <div class="fact"><i>🌍</i>Español nativo · Inglés C1</div>
       <div class="fact"><i>🏠</i>Remoto desde España o híbrido en Madrid</div>
     </div>
-  </div>
-</div></section>
-
-<section id="videos"><div class="wrap">
-  <div class="eyebrow rv">Vídeos</div><h2 class="rv">Conóceme en poco más de un minuto</h2>
-  <p class="sub rv">Tres píldoras: quién soy, mi proyecto más exigente y qué me mueve.</p>
-  <div class="grid g3">
-    <div class="card vcard rv"><video controls preload="metadata" src="pitch.mp4"></video><div class="info"><h3>1 · Elevator pitch</h3><p>Quién soy y qué aporto.</p></div></div>
-    <div class="card vcard rv"><video controls preload="metadata" src="proyecto.mp4"></video><div class="info"><h3>2 · Proyecto destacado</h3><p>Heredia: reto, tecnologías y estado.</p></div></div>
-    <div class="card vcard rv"><video controls preload="metadata" src="habilidades.mp4"></video><div class="info"><h3>3 · Habilidades y motivación en IA</h3><p>Equipo, idiomas, certificaciones y por qué la IA.</p></div></div>
   </div>
 </div></section>
 
